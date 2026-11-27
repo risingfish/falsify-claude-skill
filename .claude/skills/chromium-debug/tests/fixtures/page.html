@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fixture</title>
+  <style>
+    body { margin: 0; font-family: sans-serif; }
+    #nav { display: flex; gap: 8px; padding: 10px; background: rgb(30, 60, 90); color: white; }
+    .item { padding: 4px; }
+    #wide { width: 1500px; height: 20px; background: orange; }
+    .clip { overflow: hidden; width: 100px; }
+    .clip .inner { width: 3000px; height: 5px; }
+    #overlay { position: fixed; top: 200px; left: 0; width: 300px; height: 100px; z-index: 10; background: rgba(0,0,0,.2); }
+    @media (prefers-color-scheme: dark) { body { background: black; } }
+    @media (max-width: 500px) { #nav { flex-direction: column; } }
+  </style>
+</head>
+<body>
+  <nav id="nav"><span class="item">One</span><span class="item">Two</span><span class="item">Three</span></nav>
+  <button id="btn" onclick="this.textContent = 'clicked'; console.log('button clicked')">Press</button>
+  <input id="name" placeholder="name">
+  <div id="wide"></div>
+  <div class="clip"><div class="inner"></div></div>
+  <div id="overlay"></div>
+  <div style="height: 3000px"></div>
+  <script>console.warn('fixture loaded'); setTimeout(() => { throw new Error('boom from fixture'); }, 50);</script>
+</body>
+</html>

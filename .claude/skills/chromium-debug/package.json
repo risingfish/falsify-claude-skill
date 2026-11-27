@@ -1,0 +1,13 @@
+{
+  "name": "chromium-debug-skill",
+  "private": true,
+  "type": "module",
+  "description": "Launch a Chromium-based browser in remote-debugging mode and drive it with an extensible command harness.",
+  "engines": { "node": ">=22.4" },
+  "scripts": {
+    "test": "node --test --test-concurrency=1 tests/*.test.mjs"
+  },
+  "dependencies": {
+    "playwright-core": "1.65.1"
+  }
+}
